@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/unused_search/unused_search",
+    "pages/myproperty/myproperty",
+    "pages/item_detail/item_detail", 
+    "pages/modify_item/modify_item",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#47ADE7",
+    "navigationBarTitleText": "小程序名字",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor":"#0C76B9",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/unused_search/unused_search",
+        "text": "闲置物品",
+        "iconPath":"/res/底部导航栏闲置物品.png",
+        "selectedIconPath":"/res/底部导航栏闲置物品 (2).png"
+      },
+      {
+        "pagePath": "pages/myproperty/myproperty",
+        "text": "个人中心",
+        "iconPath": "/res/个人中心.png",
+        "selectedIconPath": "/res/个人中心 (2).png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "失物招领",
+        "iconPath": "/res/底部导航栏失物招领.png",
+        "selectedIconPath": "/res/底部导航栏失物招领 (2).png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

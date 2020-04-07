@@ -1,0 +1,63 @@
+<view class="page">
+  <view class="image_frame">
+    <image class="image" mode="aspectFill" bindtap="previewImage" src="{{item.image}}"></image>
+  </view>
+  <view class="item_detail">
+    <label class="name">{{item.name}}</label>
+    <label class="type_pricename">类别:{{item.type}}</label>
+    <label class="price_frame">
+      <text class="type_pricename">价格</text>
+      <text class="price">{{item.price}}</text>
+      <text class="signal">￥</text>
+    </label>
+    <label class="phone">联系方式:{{item.phone}}</label>
+  </view>
+  <view class="chat">
+    <view class="divide">
+      <text class="text">留言</text>
+      <image class="icon" bindtap="chatNew" src="../../res/留言页.png"></image>
+    </view>
+
+    <!--留言滚动列表-->
+    <view class="chatList" wx:for="{{chatList}}">
+      <view class="list_imagesize">
+        <image class="list_image" src="{{item.image}}"></image>
+      </view>
+      <view class="chat_text">
+        <view class="first_row">
+          <label>{{item.name}}</label>
+          <label>{{item.time}}</label>
+        </view>
+        <text class="chatcontent">{{item.content}}</text>
+        <text bindtap="chatReply" data-r_index="{{index}}" class="chat_reply">回复</text>
+        <view wx:if="{{item.reply.length != 0}}" wx:for="{{item.reply}}" wx:for-item="r_item" class="reply_frame">
+          <view class="box">
+            <label class="chat_reply">{{user.user_name}}：</label>
+            <text class="chatcontent">{{r_item}}</text>
+          </view>
+      </view>
+      </view>
+    </view>
+
+    <view class="wrap">
+      <!-- modal  -->
+      <view class="modal modal-bottom-dialog" hidden="{{hideFlag}}">
+        <view class="modal-cancel" bindtap="hideModal"></view>
+        <view class="bottom-dialog-body bottom-positon" animation="{{animationData}}">
+          <!-- 留言内容 -->
+          <view class="chat_frame" bindtap="hiddenFalse">
+            <view wx:if="{{replyFlag == false}}" class="chat_title">留言</view>
+            <view wx:else class="chat_title">回复</view>
+            <textarea wx:if="{{replyFlag == false}}" class="chat_content" bindinput="replyInputChange" placeholder="留言仅您与物品所有者可看" value="{{current_chat.current_content}}"></textarea>
+            <textarea wx:else class="chat_content" bindinput="replyInputChange" placeholder="把你要说的话回复给对方吧~" value="{{current_chat.current_content}}"></textarea>
+            <view class="func_frame">
+              <text bindtap="hideModal" class="func_cancel">取消</text>
+              <text bindtap="chatCommit" class="func_ok">确定</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,118 @@
+.search{
+  display: flex;
+  margin-top: 10rpx;
+}
+.row{
+  display:flex;
+  flex-direction:row;
+  margin: 10rpx 0;
+  padding-left: 8rpx;
+}
+.label{
+  padding-right:20rpx; 
+  font-weight: bold;
+  color: rgb(13, 60, 121);
+  padding-bottom: 10rpx;
+}
+.icon{
+  width: 60rpx;
+  height: 60rpx;
+  justify-content: center;         
+  align-items:center;
+  padding-left: 30rpx;
+  padding-right:20rpx; 
+}
+.input{
+  box-shadow: 5rpx 5rpx  rgba(138, 208, 255, 0.253);
+}
+.picker{
+  display:flex;
+  flex-direction:row;
+}
+.picker_arrow{
+  width: 50rpx;
+  height: 50rpx;
+  justify-content: center;         
+  align-items:center;
+  padding-left: 30rpx;
+}
+
+.propertyList{
+  display:flex;
+  flex-direction: column;
+  margin-top: 20rpx; 
+  height: 950rpx; 
+  background-color: rgba(175, 175, 175, 0.068) ;
+}
+.scroll_height{
+  height:950rpx;
+}
+.scroll_height2{
+  height:750rpx;
+}
+.item{
+  display: flex;
+  margin: 10rpx;
+  background-color: rgba(195, 228, 236, 0.295) ;
+  border-radius: 30rpx;
+}
+.list_imagesize{
+  display:flex;
+  margin:25rpx;
+  width: 230rpx;
+  height: 230rpx;
+  border:5rpx dashed #47ADE7;
+  justify-content: center;         
+  align-items:center;              
+}
+.list_image{
+  width: 230rpx;
+  height: 230rpx;
+}
+.des_detail{
+  display: flex;
+  width:100%;
+  flex-direction: column;
+}
+.link_text{
+  color: rgba(68, 117, 221, 0.959);
+  font-size: smaller;
+  margin: 20rpx;
+}
+.navigate_addObject{
+  background-color:  rgba(71, 172, 231, 0.664);
+  border-radius: 60rpx;
+  margin-top: 35rpx;
+  color:#fff;
+  width:45%;
+  height:100rpx;
+  align-self: center;
+}
+.navigate_addObject2{
+  background-color:  rgba(162, 196, 236, 0.178);
+  border-radius: 60rpx;
+  margin-top: 35rpx;
+  color:rgb(101, 180, 226);
+  width:45%;
+  height:100rpx;
+  align-self: center;
+}
+#text{
+ display: flex;
+ align-items: center;
+ justify-content: center; 
+ padding-top: 20rpx; 
+ font-weight: bold
+}
+.type{
+  font-size: small;
+  color: #aaa;
+  padding-top: 20rpx;
+}
+.price{
+  height:100%;
+  padding-left: 10%;
+  padding-top: 8%;
+  font-weight: bolder;
+  color: rgb(0, 36, 104)
+}

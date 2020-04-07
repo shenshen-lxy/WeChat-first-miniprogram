@@ -1,0 +1,106 @@
+<!--pages/myproperty/myproperty.wxml-->
+<!--三个Tab显示 目前物品处理进度-->
+<view>
+    <!--tab栏-->
+    <view class="row">
+      <button class="navigator" bindtap="navigateButton" data-type="all">
+        <image wx:if="{{current_navigate != 'all'}}" class="btn_icon" src="../../res/全部.png"></image>
+        <image wx:else class="btn_icon" src="../../res/全部 (2).png"></image>
+        <text wx:if="{{current_navigate != 'all'}}" class="btn_text">全部</text>
+        <text wx:else style="color:#0C76B9" class="btn_text">全部</text>
+      </button>
+      <button class="navigator" bindtap="navigateButton" data-type="properties_ed">
+        <image wx:if="{{current_navigate != 'properties_ed'}}" class="btn_icon" src="../../res/已完成.png"></image>
+        <image wx:else class="btn_icon" src="../../res/已完成 (2).png"></image>
+        <text wx:if="{{current_navigate != 'properties_ed'}}" class="btn_text">已完成</text>
+        <text wx:else style="color:#0C76B9" class="btn_text">已完成</text>
+      </button>
+      <button class="navigator" bindtap="navigateButton" data-type="properties_ing">
+        <image wx:if="{{current_navigate != 'properties_ing'}}" class="btn_icon" src="../../res/未完成.png"></image>
+        <image wx:else class="btn_icon" src="../../res/未完成 (2).png"></image>
+        <text wx:if="{{current_navigate != 'properties_ing'}}" class="btn_text">未完成</text>
+        <text wx:else style="color:#0C76B9" class="btn_text">未完成</text>
+      </button>
+    </view>
+
+    <!--呈现 物品列表-->
+    <view class="propertyList">
+      <scroll-view wx:if="{{current_navigate !='all'}}" class="scroll_height" scroll-y="true" >
+        <view wx:for="{{current_properties}}">
+        
+          <view class="item" >
+
+            <view class="list_imagesize">
+              <image class="list_image" src="{{item.image}}"></image>
+            </view>
+
+            <view class="des_detail">
+              <label style="align-self:flex-end;font-weight: bold;">编号
+                <text>{{index+1}}</text>
+              </label>
+              <label>物品名称：
+                <text>{{item.name}}</text>
+              </label>
+              <label>物品类别：
+                <text>{{item.type}}</text>
+              </label>
+              <label>价    格：
+                <text>{{item.price}}</text>
+              </label>
+              <label>手机号：
+                <text>{{item.phone}}</text>
+              </label>
+              <view wx:if="{{item.status == false}}">
+                <text class="link_text" bindtap="itemFinish" data-index="{{index}}" >完成</text>
+                <text class="link_text" bindtap="itemDelete" data-index="{{index}}" >删除</text>
+                <text class="link_text" bindtap="itemCorrect" data-item="{{properties_ing[index]}}" data-index="{{index}}">修改</text>
+              </view>
+            </view>
+
+          </view>
+        
+        </view>
+      </scroll-view>
+      <scroll-view wx:else class="scroll_height2" scroll-y="true" >
+        <view wx:for="{{current_properties}}">
+        
+          <view class="item" >
+
+            <view class="list_imagesize">
+              <image class="list_image" src="{{item.image}}"></image>
+            </view>
+
+            <view class="des_detail">
+              <label style="align-self:flex-end;font-weight: bold;">编号
+                <text>{{index+1}}</text>
+              </label>
+              <label>物品名称：
+                <text>{{item.name}}</text>
+              </label>
+              <label>物品类别：
+                <text>{{item.type}}</text>
+              </label>
+              <label>价    格：
+                <text>{{item.price}}</text>
+              </label>
+              <label>手机号：
+                <text>{{item.phone}}</text>
+              </label>
+              <view wx:if="{{item.status == false}}">
+                <text class="link_text" bindtap="itemFinish" data-index="{{index}}" >完成</text>
+                <text class="link_text" bindtap="itemDelete" data-index="{{index}}" >删除</text>
+                <text class="link_text" bindtap="itemCorrect" data-item="{{properties_ing[index]}}" data-index="{{index}}">修改</text>
+              </view>
+            </view>
+
+          </view>
+        
+        </view>
+      </scroll-view>
+
+      <navigator url="/pages/modify_item/modify_item" open-type="navigate" class="navigate_addObject" hover-class="navigate_addObject2">
+        <text id="text">添加物品</text>
+      </navigator>
+
+    </view>
+</view>

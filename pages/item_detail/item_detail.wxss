@@ -1,0 +1,205 @@
+.page{
+  display: flex;
+  flex-direction: column;
+}
+.image_frame{
+  height: 420rpx;
+  background-color: rgba(171, 232, 250, 0.295)
+}
+.image{
+  width:90%;
+  height:360rpx;
+  margin-top: 20rpx;
+  margin-left: 36rpx;
+  border: outset #b1dafff1 10rpx;
+}
+.item_detail{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.name{
+  margin-top: 15rpx;
+  margin-left: 20rpx;
+  font-weight: bolder;
+  font-size: 30pt;
+}
+.price_frame{
+  align-self: flex-end;
+  position: relative;
+  right:15rpx;
+  bottom: 30rpx;
+}
+.type_pricename{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  font-size:10pt;
+  color: #aaa;
+  padding-right: 20rpx;
+}
+.price{
+  font-size:25pt;
+  color: rgb(117, 2, 2);
+}
+.phone{
+  position: relative;
+  bottom: 15rpx;
+  margin-left: 20rpx;
+  font-size:big;
+}
+.chat{
+  position: relative;
+  bottom: 40rpx;
+  margin-top: 35rpx;
+}
+.text{
+  padding-left: 83%
+}
+.icon{
+  width:50rpx;
+  height:50rpx;
+  padding-right: 5rpx;
+  padding-left:5rpx;
+}
+.divide{
+  display: flex;
+  font-size: small;
+  color: #aaa;
+  box-shadow: 0 2rpx rgba(238, 116, 116, 0.123);
+}
+
+/* 留言项 */
+.chatList{
+  display:flex;
+  flex-direction: row;
+  margin-top: 20rpx;  
+  background-color: rgba(175, 175, 175, 0.068) ;
+}
+
+.list_imagesize{
+  display:flex;
+  margin:25rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border:5rpx dashed #47ADE7;
+  justify-content: center;         
+  align-items:center;              
+}
+.list_image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.chat_text{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.first_row{
+  display: flex;
+  flex-direction: column;
+  margin-top: 15rpx;
+  color: #aaa;
+  font-size: small;
+  margin-bottom: 15rpx;
+}
+.chatcontent{
+  font-size: 10pt;
+}
+.chat_reply{
+  font-size: small;
+  color: rgba(0, 78, 151, 0.801);
+  align-self: flex-end
+}
+/* ---------------------------- */
+
+/*模态框*/
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.modal-cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 58%;
+  background: rgba(0, 0, 0, 0);
+}
+
+.bottom-dialog-body {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  align-self: center;
+  border-radius: 60rpx;
+  background: #f7f7f7;
+}
+
+/*动画前初始位置*/
+
+.bottom-positon {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+/* 底部弹出框 */
+
+.bottom-positon {
+  text-align: center;
+}
+
+.Mselect {
+  margin-bottom: 20rpx;
+}
+
+.Mselect view {
+  padding: 26rpx 0;
+  background: #fff;
+}
+
+.Mselect view:not(:last-of-type) {
+  border-bottom: 1px solid #dfdede;
+}
+
+.Mcancel {
+  background: #fff;
+  padding: 26rpx 0;
+}
+
+/*留言内容*/
+.chat_title{
+  font-size: 15pt;
+  font-weight: bold;
+  color: rgba(11, 58, 129, 0.849);
+  margin:20rpx 0;
+
+  
+}
+.chat_content{
+  display: flex;
+  margin: 5rpx;
+  border: double #6f9aac21 20rpx;
+  border-radius: 30rpx;
+  font-size: 12pt
+}
+.func_frame{
+   display: flex;
+   color: rgba(11, 58, 129, 0.849);
+   font-size: 12pt;
+   font-weight: bold;
+   padding-bottom: 5rpx;
+   align-self: flex-end;
+}
+.func_cancel{
+  padding-left:10rpx; 
+}
+.func_ok{
+  position: absolute;
+  right: 10rpx;
+}

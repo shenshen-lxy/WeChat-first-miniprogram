@@ -1,0 +1,48 @@
+<view>
+  <view class="search">
+    <view class="row">
+      <label class="label">物品类别</label>
+      <picker class="input" bindchange="bindTypePickerChange" value="{{picker_type.type_index}}" range="{{picker_type.item_type}}">
+        <view class="picker">{{picker_type.item_type[picker_type.type_index]}}
+          <cover-image class="picker_arrow" src="../../res/下箭头.png"></cover-image>
+        </view>
+      </picker>
+    </view>
+    <view class="row">
+      <image class="icon" src="../../res/排序.png"></image>
+      <picker class="input" bindchange="bindPricePickerChange" value="{{picker_price.price_index}}" range="{{picker_price.price_type}}">
+        <view class="picker">{{picker_price.price_type[picker_price.price_index]}}
+          <cover-image class="picker_arrow" src="../../res/下箭头.png"></cover-image>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="propertyList">
+      <scroll-view class="scroll_height" scroll-y="true" >
+        <view wx:for="{{all_ing}}">
+        
+          <view class="item" bindtap="chooseItem" data-index="{{index}}">
+
+            <view class="list_imagesize">
+              <image class="list_image" src="{{item.image}}"></image>
+            </view>
+
+            <view class="des_detail">
+              <label style="align-self:flex-end;font-weight: bold;">编号
+                <text>{{index+1}}</text>
+              </label>
+              <label>{{item.name}}</label>
+              <label class="type">类别：
+                <text>{{item.type}}</text>
+              </label>
+              <label class="price">价格：
+                <text>{{item.price}}￥</text>
+              </label>
+            </view>
+
+          </view>
+        
+        </view>
+      </scroll-view>
+  </view>
+</view>

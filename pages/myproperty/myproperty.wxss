@@ -1,0 +1,88 @@
+/* pages/myproperty/myproperty.wxss */
+.row{
+  display: flex;
+}
+.navigator{
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  border-radius: 30rpx;
+}
+.btn_icon{
+  width:70rpx;
+  height:70rpx;
+  align-self: center;
+}
+.btn_text{
+  align-self: center;
+  font-weight: normal;
+  font-size:30rpx;
+}
+
+.propertyList{
+  display:flex;
+  flex-direction: column;
+  margin-top: 20rpx; 
+  height: 900rpx; 
+  background-color: rgba(175, 175, 175, 0.068) ;
+}
+.scroll_height{
+  height:900rpx;
+}
+.scroll_height2{
+  height:750rpx;
+}
+.item{
+  display: flex;
+  margin: 10rpx;
+  background-color: rgba(195, 228, 236, 0.295) ;
+  border-radius: 30rpx;
+}
+.list_imagesize{
+  display:flex;
+  margin:25rpx;
+  width: 230rpx;
+  height: 230rpx;
+  border:5rpx dashed #47ADE7;
+  justify-content: center;         
+  align-items:center;              
+}
+.list_image{
+  width: 230rpx;
+  height: 230rpx;
+}
+.des_detail{
+  display: flex;
+  width:100%;
+  flex-direction: column;
+}
+.link_text{
+  color: rgba(68, 117, 221, 0.959);
+  font-size: smaller;
+  margin: 20rpx;
+}
+.navigate_addObject{
+  background-color:  rgba(71, 172, 231, 0.664);
+  border-radius: 60rpx;
+  margin-top: 35rpx;
+  color:#fff;
+  width:45%;
+  height:100rpx;
+  align-self: center;
+}
+.navigate_addObject2{
+  background-color:  rgba(162, 196, 236, 0.178);
+  border-radius: 60rpx;
+  margin-top: 35rpx;
+  color:rgb(101, 180, 226);
+  width:45%;
+  height:100rpx;
+  align-self: center;
+}
+#text{
+ display: flex;
+ align-items: center;
+ justify-content: center; 
+ padding-top: 20rpx; 
+ font-weight: bold
+}

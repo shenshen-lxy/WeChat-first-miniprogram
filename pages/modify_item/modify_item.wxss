@@ -1,0 +1,84 @@
+/* pages/modify_item/modify_item.wxss */
+.item_correct_frame{
+  display:flex;
+  flex-direction: column;
+  margin-top: 80rpx;
+  padding: 0 80rpx ;
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  border-radius: 30rpx;
+  background-color: rgba(195, 228, 236, 0.295) 
+}
+.title{
+  display: flex;
+  padding-left: 25%;
+  padding-top: 50rpx;
+  color: rgb(8, 68, 146)
+}
+.title_2{
+  display: flex;
+  padding-left: 33%;
+  padding-top: 50rpx;
+  color: rgb(8, 68, 146)
+}
+.item_correct_title{ 
+  font-weight: bolder;
+  font-size: 50rpx;
+}
+.item_detail{
+  margin-top: 50rpx;
+}
+.row{
+  display:flex;
+  flex-direction:row;
+  margin: 10rpx 0;
+}
+.label{
+  width:40%;
+  font-weight: bold
+}
+#price,phone{
+  margin-top:20rpx; 
+}
+.input{
+  box-shadow: 0 2rpx rgba(238, 116, 116, 0.123);
+}
+.picker{
+  display:flex;
+  flex-direction:row;
+}
+.picker_arrow{
+  width: 50rpx;
+  height: 50rpx;
+  justify-content: center;         
+  align-items:center;
+  padding-left: 30rpx;
+}
+.image_frame{
+  display: flex;
+  align-self: center;
+  margin-top: 30rpx;
+  justify-content: center;         
+  align-items:center;  
+  box-shadow: 0 0 2rpx rgba(0, 0, 0, 0.5);
+}
+.image{
+  height: 400rpx;
+  width: 400rpx;
+  padding: 10rpx;
+}
+.button_frame{
+  margin-top: 30rpx;
+  
+}
+.button_2.button{
+  background-color: rgb(162, 197, 236);
+  color: #fff;
+  border-radius: 60rpx;
+  margin-bottom: 30rpx;
+}
+.button_2{
+  background-color: rgba(162, 196, 236, 0.247);
+  border-radius: 60rpx;
+  margin-bottom: 30rpx;
+}
