@@ -17,7 +17,8 @@ Page({
       item_phone:null,
       item_image:"../../res/添加图片.png"
     },
-    array_index : 0 //要修改的properties_ing数组的索引
+    array_index : 0, //要修改的properties_ing数组的索引
+    image_height : 0  //用于设置图片的宽度
   },
 
   inputChange:function(e){ //输入框发生变化后
@@ -131,6 +132,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var query = wx.createSelectorQuery();    //选择id
+    var that = this;
+    query.select('.image_frame').boundingClientRect(function (rect) {
+       console.log(rect.height)
+      that.setData({
+        image_height: rect.height + 'px'
+      })
+    }).exec(); //以上信息设置图片的宽度
     if (options.page == "correct" ){ //修改物品
       var item = JSON.parse(options.item);
       var picker_index = options.index;

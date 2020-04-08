@@ -1,6 +1,6 @@
 <!--pages/myproperty/myproperty.wxml-->
 <!--三个Tab显示 目前物品处理进度-->
-<view>
+<view class="page">
     <!--tab栏-->
     <view class="row">
       <button class="navigator" bindtap="navigateButton" data-type="all">
@@ -98,9 +98,11 @@
         </view>
       </scroll-view>
 
-      <navigator url="/pages/modify_item/modify_item" open-type="navigate" class="navigate_addObject" hover-class="navigate_addObject2">
-        <text id="text">添加物品</text>
-      </navigator>
-
+      <view class="btn_box">
+        <navigator wx:if="{{current_navigate == 'all'}}" url="/pages/modify_item/modify_item" open-type="navigate" class="navigate_addObject" hover-class="navigate_addObject2">
+          <text id="text">添加物品</text>
+        </navigator>
+      </view>
+      
     </view>
 </view>

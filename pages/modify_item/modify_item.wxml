@@ -1,8 +1,8 @@
 <!--pages/modify_item/modify_item.wxml-->
-<form class="item_correct_frame" bindsubmit="formSubmit">
+
+<view class="item_correct_frame" >
   <view class="item_correct_title">
-    <text wx:if="{{form.title == '添加物品'}}" class="title_2">{{form.title}}</text>
-    <text wx:else class="title">{{form.title}}</text>
+    <text class="text_title">{{form.title}}</text>
   </view>
   <view class="item_detail">
     <view class="row">
@@ -10,26 +10,26 @@
       <input class="input" value="{{form.item_name}}" bindinput="inputChange" data-input="item_name" placeholder="请输入物品名称..."></input>
     </view>
     <view class="row">
-        <label class="label">物品类别：</label>
-        <picker class="input" bindchange="bindPickerChange" value="{{picker.index}}" range="{{picker.item_type}}">
-          <view class="picker">{{picker.item_type[picker.index]}}
-            <cover-image class="picker_arrow" src="../../res/下箭头.png"></cover-image>
-          </view>
-         </picker>
+      <label class="label">物品类别：</label>
+      <picker class="input" bindchange="bindPickerChange" value="{{picker.index}}" range="{{picker.item_type}}">
+        <view class="picker">{{picker.item_type[picker.index]}}
+          <cover-image class="picker_arrow" src="../../res/下箭头.png"></cover-image>
+        </view>
+      </picker>
     </view>
     <view id="price" class="row">
-      <text class="label"  decode="true">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</text>
+      <text class="label" decode="true">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</text>
       <input class="input" type="digit" maxlength="9" value="{{form.item_price}}" bindinput="inputChange" data-input="item_price" placeholder="请输入价格..."></input>
     </view>
     <view id="phone" class="row">
       <label class="label">联系方式:</label>
       <input class="input" type="number" maxlength="11" value="{{form.item_phone}}" bindinput="inputChange" data-input="item_phone" placeholder="请输入联系方式..."></input>
     </view>
-    <view class="image_frame">
+    <view class="image_frame" style="width:{{image_height}}">
       <image class="image" mode="aspectFill" bindtap="imageChange" src="{{form.item_image}}"></image>
     </view>
   </view>
   <view class="button_frame">
-    <button class="button_2" hover-class="button" formType="submit" value="{{form}}">确定</button>
+    <button class="button_2" hover-class="button" bindtap="formSubmit" value="{{form}}">确定</button>
   </view>
-</form>
+</view>

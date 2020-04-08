@@ -19,22 +19,50 @@ Page({
         price: 300,
         phone: 13592348911,
         status: false
-    }],
+      }, {
+        image: "../../res/全部.png",
+        name: "物品3",
+        type: "不详",
+        price: 0,
+        phone: 10086,
+        status: false
+      }, {
+        image: "../../res/全部.png",
+        name: "物品4",
+        type: "化妆品",
+        price: 11.11,
+        phone: 13592222911,
+        status: false
+      }],
     properties_ed: [{ //已完成数组
       image: "../../res/全部 (2).png",
-      name: "物品3",
+      name: "物品5",
       type: "贵重物品",
       price: 99,
       phone: 13590273894,
       status: true
     }, {
       image: "../../res/全部 (2).png",
-      name: "物品4",
+      name: "物品6",
       type: "电子产品",
       price: 300,
       phone: 13592348911,
       status: true
-    }],
+      }, {
+        image: "../../res/全部 (2).png",
+        name: "物品7",
+        type: "贵重物品",
+        price: 10000,
+        phone: 13523348911,
+        status: true
+      }, {
+        image: "../../res/全部 (2).png",
+        name: "物品8",
+        type: "电子产品",
+        price: 200.2,
+        phone: 13592111922,
+        status: true
+      }],
     current_properties:[], //当前列表数组
     current_navigate:"", //当前导航按钮
   },

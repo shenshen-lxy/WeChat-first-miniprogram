@@ -1,6 +1,6 @@
-<view>
+<view class="page">
   <view class="search">
-    <view class="row">
+    <view class="row1">
       <label class="label">物品类别</label>
       <picker class="input" bindchange="bindTypePickerChange" value="{{picker_type.type_index}}" range="{{picker_type.item_type}}">
         <view class="picker">{{picker_type.item_type[picker_type.type_index]}}
@@ -8,7 +8,7 @@
         </view>
       </picker>
     </view>
-    <view class="row">
+    <view class="row2">
       <image class="icon" src="../../res/排序.png"></image>
       <picker class="input" bindchange="bindPricePickerChange" value="{{picker_price.price_index}}" range="{{picker_price.price_type}}">
         <view class="picker">{{picker_price.price_type[picker_price.price_index]}}

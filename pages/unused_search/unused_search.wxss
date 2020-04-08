@@ -1,12 +1,24 @@
+.page{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
 .search{
   display: flex;
   margin-top: 10rpx;
+  width: 100%;
 }
-.row{
+.row1{
   display:flex;
   flex-direction:row;
+  padding-left: 20rpx;
   margin: 10rpx 0;
-  padding-left: 8rpx;
+}
+.row2{
+  display:flex;
+  position: absolute;
+  right: 20rpx;
+  margin: 10rpx 0;
 }
 .label{
   padding-right:20rpx; 
@@ -15,8 +27,8 @@
   padding-bottom: 10rpx;
 }
 .icon{
-  width: 60rpx;
-  height: 60rpx;
+  width: 55rpx;
+  height: 55rpx;
   justify-content: center;         
   align-items:center;
   padding-left: 30rpx;
@@ -41,14 +53,11 @@
   display:flex;
   flex-direction: column;
   margin-top: 20rpx; 
-  height: 950rpx; 
+  height: 90%; 
   background-color: rgba(175, 175, 175, 0.068) ;
 }
 .scroll_height{
-  height:950rpx;
-}
-.scroll_height2{
-  height:750rpx;
+  height:100%;
 }
 .item{
   display: flex;
