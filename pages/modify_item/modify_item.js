@@ -15,10 +15,10 @@ Page({
       item_name:null,
       item_price:null,
       item_phone:null,
-      item_image:"../../res/添加图片.png"
+      item_image:[]
     },
     array_index : 0, //要修改的properties_ing数组的索引
-    image_height : 0  //用于设置图片的宽度
+    image_width : 0  //用于设置图片的高度
   },
 
   inputChange:function(e){ //输入框发生变化后
@@ -61,7 +61,7 @@ Page({
       })
     }
     else{ //添加物品
-      if (this.data.form.item_image != "../../res/添加图片.png" && 
+      if (this.data.form.item_image != [] && 
           this.data.form.item_name != null &&
           this.data.form.item_price != null &&
           this.data.form.item_phone != null){ //如果都不为空
@@ -112,20 +112,38 @@ Page({
     })
   },
 
-  imageChange: function () { //图片添加/修改
+  //选择图片
+  chooseImage: function (e) {
     var that = this;
     wx.chooseImage({
-      count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        that.data.form.item_image = res.tempFilePaths;
+      count : 4,
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function (res) {
+       //tempFilePath可以作为img标签的src属性显示图片
+       var i = 0;
+       for(;i<res.tempFilePaths.length;i++){
+         that.data.form.item_image.push(res.tempFilePaths[i]);
+       }
         that.setData({
           form:that.data.form
-        })
+        });
       }
     })
+  },
+  //预览图片
+  previewImage: function (e) {
+      wx.previewImage({
+        current: e.currentTarget.id, // 当前显示图片的http链接
+        urls: this.data.form.item_image // 需要预览的图片http链接列表
+      })
+  },
+  //清除所有图片
+  imageClear:function(){
+    this.data.form.item_image.splice(0, this.data.form.item_image.length); 
+    this.setData({
+      form: this.data.form
+    });
   },
 
   /**
@@ -134,33 +152,32 @@ Page({
   onLoad: function (options) {
     var query = wx.createSelectorQuery();    //选择id
     var that = this;
-    query.select('.image_frame').boundingClientRect(function (rect) {
-       console.log(rect.height)
+    query.select('.content_image_frame_inner').boundingClientRect(function (rect) {
       that.setData({
-        image_height: rect.height + 'px'
+        image_width: rect.width + 'px'
       })
     }).exec(); //以上信息设置图片的宽度
     if (options.page == "correct" ){ //修改物品
       var item = JSON.parse(options.item);
       var picker_index = options.index;
 
-      this.data.picker.index = picker_index;
-      this.data.form.title = "修改物品信息";
-      this.data.form.item_name = item.name;
-      this.data.form.item_price = item.price;
-      this.data.form.item_phone = item.phone;
-      this.data.form.item_image = item.image;
+      that.data.picker.index = picker_index;
+      that.data.form.title = "修改物品信息";
+      that.data.form.item_name = item.name;
+      that.data.form.item_price = item.price;
+      that.data.form.item_phone = item.phone;
+      that.data.form.item_image = item.image;
 
-      this.setData({
-        picker: this.data.picker,
-        array_index:options.array_index
+      that.setData({
+        picker: that.data.picker,
+        array_index:options.array_index,
       })
     }
     else{ //添加物品
-      this.data.form.title = "添加物品";
+      that.data.form.title = "添加物品";
     }
-    this.setData({
-      form: this.data.form
+    that.setData({
+      form: that.data.form
     })
   },
 

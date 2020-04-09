@@ -14,27 +14,27 @@ Page({
       price_index: 0,
     },
     all_ing: [{ //item数组
-      image: "../../res/全部.png",
+      image: ["../../res/全部.png", "../../res/个人中心.png","../../res/个人中心 (2).png"],
       name: "物品1",
       type: "生活物品",
       price: 9999999.23,
       phone: 13590273894
     }, { 
-        image: "../../res/全部.png",
+        image: ["../../res/全部.png"],
         name: "物品2",
         type: "电子产品",
         price: 109,
         phone: 13523473894
       },
       { 
-        image: "../../res/全部.png",
+        image: ["../../res/全部.png"],
         name: "乌龟",
         type: "不详",
         price: 91,
         phone: 13590273334
       },
       { 
-        image: "../../res/全部.png",
+        image: ["../../res/全部.png"],
         name: "纸巾",
         type: "生活物品",
         price: 5,

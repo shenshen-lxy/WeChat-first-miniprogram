@@ -25,10 +25,29 @@
       <label class="label">联系方式:</label>
       <input class="input" type="number" maxlength="11" value="{{form.item_phone}}" bindinput="inputChange" data-input="item_phone" placeholder="请输入联系方式..."></input>
     </view>
-    <view class="image_frame" style="width:{{image_height}}">
+  </view>
+    <!-- <view class="image_frame" style="width:{{image_height}}">
       <image class="image" mode="aspectFill" bindtap="imageChange" src="{{form.item_image}}"></image>
+    </view> -->
+  <view class="image_all_frame">
+    <view class='image_text_frame'>
+      <text class='image_text'>上传图片:</text>
+      <view class="image_clear"><text bindtap="imageClear">清空</text></view>
+    </view>
+    <view class="content_image_frame_outer">
+      <block wx:for="{{form.item_image}}" wx:key="*this">
+        <view class="content_image_frame_inner" style="height:{{image_width}}" bindtap="previewImage" id="{{item}}">
+          <image class="content_image" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+      <view wx:if="{{form.item_image.length <= 3}}" class="content_image_frame_inner">
+        <view bindtap="chooseImage" class='content_image_icon_frame' style="height:{{image_width}}">
+          <image class='content_image_icon' src='../../res/照相机.png'></image>
+        </view>
+      </view>
     </view>
   </view>
+  
   <view class="button_frame">
     <button class="button_2" hover-class="button" bindtap="formSubmit" value="{{form}}">确定</button>
   </view>

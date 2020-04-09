@@ -24,7 +24,7 @@
           <view class="item" bindtap="chooseItem" data-index="{{index}}">
 
             <view class="list_imagesize">
-              <image class="list_image" src="{{item.image}}"></image>
+              <image class="list_image" src="{{item.image[0]}}"></image>
             </view>
 
             <view class="des_detail">

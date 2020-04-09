@@ -12,7 +12,7 @@ Page({
     },
     item: {
       owner_info: "卖者",
-      image: "../../res/微笑.jpg",
+      image: ["../../res/微笑.jpg", "../../res/个人中心.png","../../res/个人中心 (2).png"],
       name: "一次性的便签",
       type: "不详",
       price: 45.35,
@@ -22,7 +22,7 @@ Page({
     animationData: {}, //存放滑入滑出动画的动画数据
     replyFlag: false, //留言板：true-回复 false-留言
     current_chat:{
-      current_content: "", //当前留言内容
+      current_content: null, //当前留言内容
       current_index:0, //当前留言的chatList索引
     },
     chatList:[{
@@ -54,12 +54,16 @@ Page({
       }
     }
     else{ //留言
-      var chat = {image:this.data.user.user_icon,
-                  name:this.data.user.user_name,
-                  content:this.data.current_chat.current_content,
-                  time: util.formatTime(new Date()),
-                  reply:[]};
-      this.data.chatList.push(chat);
+      if (this.data.current_chat.current_content) { //有输入 留言/回复内容
+        var chat = {
+          image: this.data.user.user_icon,
+          name: this.data.user.user_name,
+          content: this.data.current_chat.current_content,
+          time: util.formatTime(new Date()),
+          reply: []
+        };
+        this.data.chatList.push(chat); 
+      }
     }
     this.data.current_chat.current_content = "";
     this.setData({

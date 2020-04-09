@@ -2,7 +2,7 @@
   "pages": [
     "pages/unused_search/unused_search",
     "pages/myproperty/myproperty",
-    "pages/item_detail/item_detail", 
+    "pages/item_detail/item_detail",
     "pages/modify_item/modify_item",
     "pages/logs/logs"
   ],

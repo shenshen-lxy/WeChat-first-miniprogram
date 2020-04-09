@@ -1,8 +1,10 @@
 .page{
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
-.image_frame{
+/* .image_frame{
   height: 420rpx;
   background-color: rgba(171, 232, 250, 0.295)
 }
@@ -12,7 +14,23 @@
   margin-top: 20rpx;
   margin-left: 36rpx;
   border: outset #b1dafff1 10rpx;
+} */
+.header_swiper_frame {
+  height: 420rpx;
+  border-radius: 30rpx;
 }
+
+.header_swiper {
+  height: 100%;
+  border-radius: 30rpx;
+}
+
+.header_swiper_image {
+  height: 100%;
+  width: 100%;
+  border-radius: 30rpx;
+}
+
 .item_detail{
   display: flex;
   flex-direction: column;
@@ -173,13 +191,17 @@
 }
 
 /*留言内容*/
+.chat_frame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .chat_title{
   font-size: 15pt;
   font-weight: bold;
   color: rgba(11, 58, 129, 0.849);
   margin:20rpx 0;
-
-  
 }
 .chat_content{
   display: flex;
@@ -195,11 +217,12 @@
    font-weight: bold;
    padding-bottom: 5rpx;
    align-self: flex-end;
+   width: 100%;
 }
 .func_cancel{
-  padding-left:10rpx; 
+  padding-left:30rpx; 
 }
 .func_ok{
   position: absolute;
-  right: 10rpx;
+  right: 30rpx;
 }
