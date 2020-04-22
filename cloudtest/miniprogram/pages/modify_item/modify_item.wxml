@@ -1,0 +1,52 @@
+<!--pages/modify_item/modify_item.wxml-->
+
+<view class="item_correct_frame" >
+  <view class="item_correct_title">
+    <text class="text_title">{{form.title}}</text>
+  </view>
+  <view class="item_detail">
+    <view class="row">
+      <label class="label">物品名称：</label>
+      <input class="input" value="{{form.item_name}}" bindinput="inputChange" data-input="item_name" placeholder="请输入物品名称..."></input>
+    </view>
+    <view class="row">
+      <label class="label">物品类别：</label>
+      <picker class="input" bindchange="bindPickerChange" value="{{picker.index}}" range="{{picker.item_type}}">
+        <view class="picker">{{picker.item_type[picker.index]}}
+          <cover-image class="picker_arrow" src="/res/down_arrow.png"></cover-image>
+        </view>
+      </picker>
+    </view>
+    <view id="price" class="row">
+      <text class="label" decode="true">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</text>
+      <input class="input" type="digit" maxlength="9" value="{{form.item_price}}" bindinput="inputChange" data-input="item_price" placeholder="请输入价格..."></input>
+    </view>
+    <view id="phone" class="row">
+      <label class="label">联系方式:</label>
+      <input class="input" type="number" maxlength="11" value="{{form.item_phone}}" bindinput="inputChange" data-input="item_phone" placeholder="请输入联系方式..."></input>
+    </view>
+  </view>
+
+  <view class="image_all_frame">
+    <view class='image_text_frame'>
+      <text class='image_text'>上传图片:</text>
+      <view class="image_clear"><text bindtap="imageClear">清空</text></view>
+    </view>
+    <view class="content_image_frame_outer">
+      <block wx:for="{{form.item_image}}" wx:key="*this">
+        <view class="content_image_frame_inner" style="height:{{image_width}}" bindtap="previewImage" id="{{item}}">
+          <image class="content_image" src="{{item}}" mode="aspectFill" />
+        </view>
+      </block>
+      <view wx:if="{{form.item_image.length <= 3}}" class="content_image_frame_inner">
+        <view bindtap="chooseImage" class='content_image_icon_frame' style="height:{{image_width}}">
+          <image class='content_image_icon' src='/res/camera.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <view class="button_frame">
+    <button class="button_2" hover-class="button" bindtap="formSubmit" value="{{form}}">确定</button>
+  </view>
+</view>

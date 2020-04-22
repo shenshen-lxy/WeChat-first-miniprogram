@@ -1,0 +1,8 @@
+<navigator url="../../pages/index/index">云开发</navigator>
+<button bindtap="imagechoose">选择图片</button>
+<button bindtap="add">添加物品</button>
+<button bindtap="getobj">获得物品</button>
+<button bindtap="chat">留言</button>
+<button bindtap="reply">回复</button>
+<button bindtap="getOpenID">点击获取openid</button>
+<text>{{openID}}</text>
